@@ -1,9 +1,11 @@
+import { NavLink } from 'react-router-dom'
+
 function MiddlePortion(): React.JSX.Element {
   return (
-    <div>
-      <p>Navigation 1</p>
-      <p>Navigation 2</p>
-      <p>Navigation 3</p>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '.5rem' }}>
+      <NavLink to="/tasks">Task Section</NavLink>
+      <NavLink to="/calendar">Calendar Section</NavLink>
+      <NavLink to="/password">Password Section</NavLink>
     </div>
   )
 }

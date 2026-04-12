@@ -3,7 +3,7 @@ import { stringAvatar } from '@renderer/lib/avatarUtils'
 
 function ProfileAvatar(): React.JSX.Element {
   return (
-    <Stack direction="row" spacing={1} style={{}}>
+    <Stack direction="row">
       <Avatar {...stringAvatar('Dominick Trevino')} />
     </Stack>
   )

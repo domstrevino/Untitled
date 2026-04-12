@@ -2,7 +2,7 @@ import ProfileAvatar from './components/ProfileAvatar'
 
 function BottomPortion(): React.JSX.Element {
   return (
-    <div style={{}}>
+    <div>
       <ProfileAvatar />
     </div>
   )
