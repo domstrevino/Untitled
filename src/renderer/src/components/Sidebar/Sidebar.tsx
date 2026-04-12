@@ -10,9 +10,9 @@ function Sidebar(): React.JSX.Element {
         flexDirection: 'column',
         padding: '1rem',
         width: '10rem',
-        border: '1px solid red',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'var(--color-sidebar)'
       }}
     >
       <TopPortion />
