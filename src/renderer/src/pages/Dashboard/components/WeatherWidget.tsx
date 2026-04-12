@@ -10,7 +10,7 @@ function WeatherWidget(): React.JSX.Element {
     return <div>Loading...</div>
   }
   return (
-    <div>
+    <div style={{ maxWidth: 'fit-content' }}>
       <Card
         sx={{
           backgroundImage: `url(${weather?.isDay ? dayImage : nightImage})`,

@@ -1,6 +1,6 @@
 function Tasks(): React.JSX.Element {
   return (
-    <div>
+    <div style={{ width: '100%', padding: '1rem' }}>
       <h1>Tasks Page</h1>
     </div>
   )
