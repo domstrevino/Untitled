@@ -1,5 +1,5 @@
 import TopPortion from './components/TopPortion'
-import MiddlePortion from './components/MiddlePortion'
+import MiddlePortion from './components/MiddlePortion/MiddlePortion'
 import BottomPortion from './components/BottomPortion'
 
 function Sidebar(): React.JSX.Element {
