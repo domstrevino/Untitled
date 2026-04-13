@@ -5,7 +5,7 @@ function MiddlePortion(): React.JSX.Element {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '.5rem' }}>
       <NavButton to="/tasks" label="Tasks" />
       <NavButton to="/calendar" label="Calendar" />
-      <NavButton to="/passwords" label="Passwords" />
+      <NavButton to="/secure-vault" label="Vault" />
     </div>
   )
 }

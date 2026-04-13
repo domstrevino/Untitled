@@ -17,6 +17,17 @@ function createWindow(): void {
     }
   })
 
+  mainWindow.webContents.session.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': [
+          "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.open-meteo.com; img-src 'self' data: blob"
+        ]
+      }
+    })
+  })
+
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
