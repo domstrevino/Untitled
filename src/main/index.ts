@@ -3,6 +3,13 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import './database/db'
+import {
+  getAllTasks,
+  getTasksForToday,
+  createTask,
+  updateTask,
+  deleteTask
+} from './database/queries/tasks'
 
 function createWindow(): void {
   // Create the browser window.
@@ -63,6 +70,31 @@ app.whenReady().then(() => {
 
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
+
+  //Tasks IPC handlers
+  ipcMain.handle('tasks:getAll', () => getAllTasks())
+  ipcMain.handle('tasks:getToday', () => getTasksForToday())
+  ipcMain.handle(
+    'tasks:create',
+    (_event, title: string, description: string, status: string, target_date: string) => {
+      createTask(title, description, status, target_date)
+    }
+  )
+  ipcMain.handle(
+    'tasks:update',
+    (
+      _event,
+      id: number,
+      title: string,
+      description: string,
+      status: string,
+      target_date: string,
+      updated_at: string
+    ) => {
+      updateTask(id, title, description, status, target_date, updated_at)
+    }
+  )
+  ipcMain.handle('tasks:delete', (_event, id: number) => deleteTask(id))
 
   createWindow()
 
